@@ -1,0 +1,340 @@
+{{!
+    This file is part of Moodle - https://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_osa/viewqttypes
+
+    Template purpose and description.
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * none
+
+    Context variables required for this template:
+    * none
+
+    Example context (json):
+    {
+    }
+}}
+
+{{!
+    ToDo: Update and integrate lang file
+}}
+
+<div class="card mt-2 mb-2">
+{{# title}}
+    <div class="card-header">
+    </div>
+{{/ title}}
+    <div class="card-body">
+
+<!-- display content for qtype textelement -->
+
+        {{# qtypetextelement}}
+
+            {{# content}}
+                <div class="form-check">
+                    <label class="form-check-label w-100">
+                    {{{content}}}
+                    <span>
+                    </span>
+                    </label>
+                </div>
+                <textarea class="w-100" id="textarea" name="textarea-{{qtype}}-{{recordid}}" rows="4" cols="auto" disabled>
+                {{content_user_filled_in}}
+                </textarea>
+            {{/ content}}
+
+        {{/ qtypetextelement}}
+
+
+<!-- display content for qtype likert scale -->
+
+        {{# qtypelikertscale}}
+
+            {{# content01}}
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label w-50 text-center" for="radiodefault1">
+                    {{{content01}}}
+                    <span>
+                    </span>
+                    </label>
+
+                    <input class="form-check-input w-50 text-center" type="radio" name="radio-{{qtype}}-{{recordid}}" id="radiodefault1" value="1" disabled {{content_user_filled_in_01}}>
+                </div>
+            {{/ content01}}
+
+            {{# content02}}
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label w-50 text-center" for="radiodefault2">
+                    {{{content02}}}
+                    <span>
+                    </span>
+                    </label>
+
+                    <input class="form-check-input w-50 text-center" type="radio" name="radio-{{qtype}}-{{recordid}}" id="radiodefault2" value="2" disabled {{content_user_filled_in_02}}>
+                </div>
+            {{/ content02}}
+
+            {{# content03}}
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label w-50 text-center" for="radiodefault3">
+                    {{{content03}}}
+                    <span>
+                    </span>
+                    </label>
+
+                    <input class="form-check-input w-50 text-center" type="radio" name="radio-{{qtype}}-{{recordid}}" id="radiodefault3" value="3" disabled {{content_user_filled_in_03}}>
+                </div>
+            {{/ content03}}
+
+            {{# content04}}
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label w-50 text-center" for="radiodefault4">
+                    {{{content04}}}
+                    <span>
+                    </span>
+                    </label>
+
+                    <input class="form-check-input w-50 text-center" type="radio" name="radio-{{qtype}}-{{recordid}}" id="radiodefault4" value="4" disabled {{content_user_filled_in_04}}>
+                </div>
+            {{/ content04}}
+
+            {{# content05}}
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label w-50 text-center" for="radiodefault5">
+                    {{{content05}}}
+                    <span>
+                    </span>
+                    </label>
+
+                    <input class="form-check-input w-50 text-center" type="radio" name="radio-{{qtype}}-{{recordid}}" id="radiodefault5" value="5" disabled {{content_user_filled_in_05}}>
+                </div>
+            {{/ content05}}
+
+            {{# content06}}
+
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label w-50 text-center" for="radiodefault6">
+                    {{{content06}}}
+                    <span>
+                    </span>
+                    </label>
+
+                    <input class="form-check-input w-50 text-center" type="radio" name="radio-{{qtype}}-{{recordid}}" id="radiodefault6" value="6" disabled {{content_user_filled_in_06}}>
+                </div>
+            {{/ content06}}
+
+            {{# content07}}
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label w-50 text-center" for="radiodefault7">
+                    {{{content07}}}
+                    <span>
+                    </span>
+                    </label>
+
+                    <input class="form-check-input w-50 text-center" type="radio" name="radio-{{qtype}}-{{recordid}}" id="radiodefault7" value="7" disabled {{content_user_filled_in_07}}>
+                </div>
+            {{/ content07}}
+
+        {{/ qtypelikertscale}}
+
+
+<!-- display content for qtype checkbox -->
+
+        {{# qtypecheckbox}}
+
+            {{# content01}}
+                <div class="form-check">
+                    <label class="form-check-label w-50 text-center" for="checkboxdefault1">
+                    {{{content01}}}
+                    <span>
+                    </span>
+                    </label>
+
+                    <input class="form-check-input w-50 text-center" type="checkbox" name="checkbox1-{{qtype}}-{{recordid}}" id="checkboxdefault1" value="1" disabled {{content_user_filled_in_01}}>
+                </div>
+
+            {{/ content01}}
+
+            {{# content02}}
+                 <div class="form-check">
+                     <label class="form-check-label w-50 text-center" for="checkboxdefault2">
+                     {{{content02}}}
+                     <span>
+                     </span>
+                     </label>
+
+                     <input class="form-check-input w-50 text-center" type="checkbox" name="checkbox2-{{qtype}}-{{recordid}}" id="checkboxdefault2" value="2" disabled {{content_user_filled_in_02}}>
+                 </div>
+
+             {{/ content02}}
+
+             {{# content03}}
+                 <div class="form-check">
+                     <label class="form-check-label w-50 text-center" for="checkboxdefault3">
+                     {{{content03}}}
+                     <span>
+                     </span>
+                     </label>
+
+                     <input class="form-check-input w-50 text-center" type="checkbox" name="checkbox3-{{qtype}}-{{recordid}}" id="checkboxdefault3" value="3" disabled {{content_user_filled_in_03}}>
+                 </div>
+
+             {{/ content03}}
+
+             {{# content04}}
+                 <div class="form-check">
+                     <label class="form-check-label w-50 text-center" for="checkboxdefault4">
+                     {{{content04}}}
+                     <span>
+                     </span>
+                     </label>
+
+                     <input class="form-check-input w-50 text-center" type="checkbox" name="checkbox4-{{qtype}}-{{recordid}}" id="checkboxdefault4" value="4" disabled {{content_user_filled_in_04}}>
+                 </div>
+
+             {{/ content04}}
+
+             {{# content05}}
+                 <div class="form-check">
+                     <label class="form-check-label w-50 text-center" for="checkboxdefault5">
+                     {{{content05}}}
+                     <span>
+                     </span>
+                     </label>
+
+                     <input class="form-check-input w-50 text-center" type="checkbox" name="checkbox5-{{qtype}}-{{recordid}}" id="checkboxdefault5" value="5" disabled {{content_user_filled_in_05}}>
+                 </div>
+
+             {{/ content05}}
+
+             {{# content06}}
+                 <div class="form-check">
+                     <label class="form-check-label w-50 text-center" for="checkboxdefault6">
+                     {{{content06}}}
+                     <span>
+                     </span>
+                     </label>
+
+                     <input class="form-check-input w-50 text-center" type="checkbox" name="checkbox6-{{qtype}}-{{recordid}}" id="checkboxdefault6" value="6" disabled {{content_user_filled_in_06}}>
+                 </div>
+
+             {{/ content06}}
+
+             {{# content07}}
+                 <div class="form-check">
+                     <label class="form-check-label w-50 text-center" for="checkboxdefault7">
+                     {{{content07}}}
+                     <span>
+                     </span>
+                     </label>
+
+                     <input class="form-check-input w-50 text-center" type="checkbox" name="checkbox7-{{qtype}}-{{recordid}}" id="checkboxdefault7" value="7" disabled {{content_user_filled_in_07}}>
+                 </div>
+
+             {{/ content07}}
+
+             {{# content08}}
+                 <div class="form-check">
+                     <label class="form-check-label w-50 text-center" for="checkboxdefault8">
+                     {{{content08}}}
+                     <span>
+                     </span>
+                     </label>
+
+                     <input class="form-check-input w-50 text-center" type="checkbox" name="checkbox8-{{qtype}}-{{recordid}}" id="checkboxdefault8" value="8" disabled {{content_user_filled_in_08}}>
+                 </div>
+
+             {{/ content08}}
+
+             {{# content09}}
+                 <div class="form-check">
+                     <label class="form-check-label w-50 text-center" for="checkboxdefault9">
+                     {{{content09}}}
+                     <span>
+                     </span>
+                     </label>
+
+                     <input class="form-check-input w-50 text-center" type="checkbox" name="checkbox9-{{qtype}}-{{recordid}}" id="checkboxdefault9" value="9" disabled {{content_user_filled_in_09}}>
+                 </div>
+
+             {{/ content09}}
+
+             {{# content10}}
+                 <div class="form-check">
+                     <label class="form-check-label w-50 text-center" for="checkboxdefault10">
+                     {{{content10}}}
+                     <span>
+                     </span>
+                     </label>
+
+                     <input class="form-check-input w-50 text-center" type="checkbox" name="checkbox10-{{qtype}}-{{recordid}}" id="checkboxdefault10" value="10" disabled {{content_user_filled_in_10}}>
+                 </div>
+
+             {{/ content10}}
+
+        {{/ qtypecheckbox}}
+
+
+<!-- display content for qtype slider -->
+
+        {{# qtypeslider}}
+
+            {{# content}}
+                <div class="form-check">
+                    <label class="form-check-label w-50 text-left" for="sliderdefault1">
+                    {{{content}}}
+                    <span>
+                    </span>
+                    </label>
+                        <br>
+                    <input class="form-check-input w-100 text-center" type="range" min="1" max="100" name="slider-{{qtype}}-{{recordid}}" value="{{content_user_filled_in}}" id="sliderdefault1" disabled>
+                </div>
+
+            {{/ content}}
+
+        {{/ qtypeslider}}
+
+
+<!-- display edit block -->
+
+    <p></p>
+
+
+        {{# edit }}
+            <div class="text-right">
+                <a href="{{edit_form_link}}" class="btn btn-primary mr-1">
+                    <i title="{{#str}}edit, core{{/str}}" role="img" aria-label="edit" class="icon fa fa-pencil-square-o fa-fw m-0 "></i>
+                </a>
+                <a href="{{delete_form_link}}" class="btn btn-secondary mr-1">
+                    <i title="{{#str}}delete, core{{/str}}" role="img" aria-label="delete" class="icon fa fa-trash-o fa-fw m-0"></i>
+                </a>
+                <hr>
+                <a href="{{move_up_form_link}}" class="btn btn-secondary mr-1">
+                    <i title="{{#str}}move, core{{/str}}" role="img" aria-label="moveup" class="icon fa fa-chevron-up fa-fw m-0"></i>
+                </a>
+                <a href="{{move_down_form_link}}" class="btn btn-secondary mr-1">
+                    <i title="{{#str}}move, core{{/str}}" role="img" aria-label="movedown" class="icon fa fa-chevron-down fa-fw m-0"></i>
+                </a>                
+            </div>
+        {{/ edit }}
+    </div>
+</div>
+<hr>
