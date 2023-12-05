@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="mod/osa/db" VERSION="20231103" COMMENT="XMLDB file for Moodle mod_osa"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="osa" COMMENT="Stores the osa activity module instances.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="course" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="ID of the course this activity is part of."/>
+        <FIELD NAME="name" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" COMMENT="The name of the activity module instance"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Timestamp of when the instance was added to the course."/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Timestamp of when the instance was last modified."/>
+        <FIELD NAME="intro" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Activity description."/>
+        <FIELD NAME="introformat" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="The format of the intro field."/>
+        <FIELD NAME="osasettingtextoptional" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Teacher mode create osa text optional"/>
+        <FIELD NAME="osasettingtextoptionalformat" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Teacher mode create osa text optional format"/>
+        <FIELD NAME="osasettingimageoptional" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Teacher mode create osa image optional"/>
+        <FIELD NAME="osasettingimageoptionalformat" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Teacher mode create osa image optional format"/>
+        <FIELD NAME="idfeature1" TYPE="int" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Identification 1 of 2 features"/>
+        <FIELD NAME="idfeature2" TYPE="int" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Identification 2 of 2 features"/>
+        <FIELD NAME="allowpeerevaluation" TYPE="int" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Peerevaluation allowed or not"/>
+        <FIELD NAME="researchtitle" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Research title"/>
+        <FIELD NAME="researchoptionresearchrequest" TYPE="int" LENGTH="1" NOTNULL="false" SEQUENCE="false" COMMENT="Research option research request prompt"/>
+        <FIELD NAME="allowedattempts" TYPE="int" LENGTH="1" NOTNULL="false" DEFAULT="0" SEQUENCE="false" COMMENT="sets allowed attempts 0 = endless attempts"/>
+        <FIELD NAME="nextcompletionindays" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" COMMENT="next completion is allowed in x days"/>
+        <FIELD NAME="namecat01" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="category 01"/>
+        <FIELD NAME="osanamecat01" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="osanamecat01"/>
+        <FIELD NAME="osanamecat01format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="osanamecat01editorformat"/>
+        <FIELD NAME="namecat02" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="category 02"/>
+        <FIELD NAME="osanamecat02" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="osanamecat02"/>
+        <FIELD NAME="osanamecat02format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="osanamecat02format"/>
+        <FIELD NAME="namecat03" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="category 03"/>
+        <FIELD NAME="osanamecat03" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="osanamecat03"/>
+        <FIELD NAME="osanamecat03format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="osanamecat03format"/>
+        <FIELD NAME="namecat04" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="category 04"/>
+        <FIELD NAME="osanamecat04" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="osanamecat04"/>
+        <FIELD NAME="osanamecat04format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="osanamecat04format"/>
+        <FIELD NAME="namecat05" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="category 05"/>
+        <FIELD NAME="osanamecat05" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="osanamecat05"/>
+        <FIELD NAME="osanamecat05format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="osanamecat05format"/>
+        <FIELD NAME="namecat06" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="category 06"/>
+        <FIELD NAME="osanamecat06" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="osanamecat06"/>
+        <FIELD NAME="osanamecat06format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="osanamecat06format"/>
+        <FIELD NAME="namecat07" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="category 07"/>
+        <FIELD NAME="osanamecat07" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="osanamecat07"/>
+        <FIELD NAME="osanamecat07format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="osanamecat07format"/>
+        <FIELD NAME="namecat08" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="category 08"/>
+        <FIELD NAME="osanamecat08" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="osanamecat08"/>
+        <FIELD NAME="osanamecat08format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="osanamecat08format"/>
+        <FIELD NAME="namecat09" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="category 09"/>
+        <FIELD NAME="osanamecat09" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="osanamecat09"/>
+        <FIELD NAME="osanamecat09format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="osanamecat09format"/>
+        <FIELD NAME="namecat10" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="category 10"/>
+        <FIELD NAME="osanamecat10" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="osanamecat10"/>
+        <FIELD NAME="osanamecat10format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="osanamecat10format"/>
+        <FIELD NAME="namecat11" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="category 11"/>
+        <FIELD NAME="osanamecat11" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="osanamecat11"/>
+        <FIELD NAME="osanamecat11format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="osanamecat11format"/>
+        <FIELD NAME="namecat12" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="category 12"/>
+        <FIELD NAME="osanamecat12" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="osanamecat12"/>
+        <FIELD NAME="osanamecat12format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="osanamecat12format"/>
+        <FIELD NAME="namecat13" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="category 13"/>
+        <FIELD NAME="osanamecat13" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="osanamecat13"/>
+        <FIELD NAME="osanamecat13format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="osanamecat13format"/>
+        <FIELD NAME="namecat14" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="category 14"/>
+        <FIELD NAME="osanamecat14" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="osanamecat14"/>
+        <FIELD NAME="osanamecat14format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="osanamecat14format"/>
+        <FIELD NAME="namecat15" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="category 15"/>
+        <FIELD NAME="osanamecat15" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="osanamecat15"/>
+        <FIELD NAME="osanamecat15format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="osanamecat15format"/>
+        <FIELD NAME="namecat16" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="category 16"/>
+        <FIELD NAME="osanamecat16" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="osanamecat16"/>
+        <FIELD NAME="osanamecat16format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="osanamecat16format"/>
+        <FIELD NAME="namecat17" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="category 17"/>
+        <FIELD NAME="osanamecat17" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="osanamecat17"/>
+        <FIELD NAME="osanamecat17format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="osanamecat17format"/>
+        <FIELD NAME="namecat18" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="category 18"/>
+        <FIELD NAME="osanamecat18" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="osanamecat18"/>
+        <FIELD NAME="osanamecat18format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="osanamecat18format"/>
+        <FIELD NAME="namecat19" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="category 19"/>
+        <FIELD NAME="osanamecat19" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="osanamecat19"/>
+        <FIELD NAME="osanamecat19format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="osanamecat19format"/>
+        <FIELD NAME="namecat20" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false" COMMENT="category 20"/>
+        <FIELD NAME="osanamecat20" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="osanamecat20"/>
+        <FIELD NAME="osanamecat20format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="osanamecat20format"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="osa_instance_qttextelement" COMMENT="Stores the osa activity module qttextelement data with reference to the osa instances in the osa table.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="textelementname" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="textelementeditor" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="textelementeditorformat" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fk_qtt" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="foreign key references osa id"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="fk_qtt" TYPE="foreign" FIELDS="fk_qtt" REFTABLE="osa" REFFIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="osa_instance_qtlikertscale" COMMENT="Stores the osa activity module qtlikertscale data with reference to the osa instances in the osa table.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="amountlss" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="lsname" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="lsimage01" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="lsimage01format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="lstextdesceditor01" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="lstextdesceditor01format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="lsimage02" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="lsimage02format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="lstextdesceditor02" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="lstextdesceditor02format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="lsimage03" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="lsimage03format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="lstextdesceditor03" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="lstextdesceditor03format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="lsimage04" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="lsimage04format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="lstextdesceditor04" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="lstextdesceditor04format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="lsimage05" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="lsimage05format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="lstextdesceditor05" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="lstextdesceditor05format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="lsimage06" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="lsimage06format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="lstextdesceditor06" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="lstextdesceditor06format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="lsimage07" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="lsimage07format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="lstextdesceditor07" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="lstextdesceditor07format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fk_qtls" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="fk_qtls" TYPE="foreign" FIELDS="fk_qtls" REFTABLE="osa" REFFIELDS="id" COMMENT="foreign key references osa id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="osa_instance_qtcheckbox" COMMENT="Stores the osa activity module qtcheckbox data with reference to the osa instances in the osa table.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="amountqtc" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="cbname" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="cbtextdesc01" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="cbtextdesc01format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="cbtextdesc02" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="cbtextdesc02format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="cbtextdesc03" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="cbtextdesc03format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="cbtextdesc04" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="cbtextdesc04format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="cbtextdesc05" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="cbtextdesc05format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="cbtextdesc06" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="cbtextdesc06format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="cbtextdesc07" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="cbtextdesc07format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="cbtextdesc08" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="cbtextdesc08format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="cbtextdesc09" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="cbtextdesc09format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="cbtextdesc10" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="cbtextdesc10format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fk_qtc" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="foreign key references osa id"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="fk_qtc" TYPE="foreign" FIELDS="fk_qtc" REFTABLE="osa" REFFIELDS="id" COMMENT="foreign key references osa id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="osa_instance_qtslider" COMMENT="Stores the osa activity module qtslider data with reference to the osa instances in the osa table.">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="amountss" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="sname" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="sname01" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="simage01" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="simage01format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="ssdesceditor01" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="ssdesceditor01format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="sname02" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="simage02" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="simage02format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="ssdesceditor02" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="ssdesceditor02format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fk_qts" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="sname03" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="simage03" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="simage03format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="ssdesceditor03" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="ssdesceditor03format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="sname04" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="simage04" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="simage04format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="ssdesceditor04" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="ssdesceditor04format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="sname05" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="simage05" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="simage05format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="ssdesceditor05" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="ssdesceditor05format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="sname06" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="simage06" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="simage06format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="ssdesceditor06" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="ssdesceditor06format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="sname07" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="simage07" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="simage07format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="ssdesceditor07" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="ssdesceditor07format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="sname08" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="simage08" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="simage08format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="ssdesceditor08" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="ssdesceditor08format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="sname09" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="simage09" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="simage09format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="ssdesceditor09" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="ssdesceditor09format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="sname10" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="simage10" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="simage10format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="ssdesceditor10" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="ssdesceditor10format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="fk_qts" TYPE="foreign" FIELDS="fk_qts" REFTABLE="osa" REFFIELDS="id" COMMENT="foreign key references osa id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="osa_qtype_collection" COMMENT="reference table for entries in qttype tables">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="sort" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" COMMENT="sort according to this id"/>
+        <FIELD NAME="category" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="assign to a category"/>
+        <FIELD NAME="fk_tqtt" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="references table qttextelement"/>
+        <FIELD NAME="fk_tqtls" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fk_tqtc" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fk_tqts" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fk_cmid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="foreign key references osa id"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="fk_tqtt" TYPE="foreign" FIELDS="fk_tqtt" REFTABLE="osa_instance_qttextelement" REFFIELDS="id"/>
+        <KEY NAME="fk_tqtls" TYPE="foreign" FIELDS="fk_tqtls" REFTABLE="osa_instance_qtlikertscale" REFFIELDS="id"/>
+        <KEY NAME="fk_tqtc" TYPE="foreign" FIELDS="fk_tqtc" REFTABLE="osa_instance_qtcheckbox" REFFIELDS="id"/>
+        <KEY NAME="fk_tqts" TYPE="foreign" FIELDS="fk_tqts" REFTABLE="osa_instance_qtslider" REFFIELDS="id"/>
+        <KEY NAME="fk_cmid" TYPE="foreign" FIELDS="fk_cmid" REFTABLE="osa" REFFIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="osa_instance_qttextelement_a" COMMENT="answers are saved in this database">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="textelementeditor" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="textelementeditorformat" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="attempt" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" COMMENT="attempt by user"/>
+        <FIELD NAME="fk_user" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="references the moodle user table"/>
+        <FIELD NAME="fk_osa_instance_qttextelement" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="references qttextelement id"/>
+        <FIELD NAME="fk_cmid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="foreign key references osa id"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="fk_user" TYPE="foreign" FIELDS="fk_user" REFTABLE="user" REFFIELDS="id" COMMENT="fk_user references id in user table"/>
+        <KEY NAME="fk_osa_instance_qttextelement" TYPE="foreign" FIELDS="fk_osa_instance_qttextelement" REFTABLE="osa_instance_qttextelement" REFFIELDS="id" COMMENT="references qttextelement"/>
+        <KEY NAME="fk_cmid" TYPE="foreign" FIELDS="fk_cmid" REFTABLE="osa" REFFIELDS="id"/>
+        <KEY NAME="usermodified" TYPE="foreign" FIELDS="usermodified" REFTABLE="user" REFFIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="osa_instance_qtlikertscale_a" COMMENT="answers are saved in this database">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="lsitem01" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="likert scale value item 01"/>
+        <FIELD NAME="lsitem02" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="likert scale value item 02"/>
+        <FIELD NAME="lsitem03" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="likert scale value item 03"/>
+        <FIELD NAME="lsitem04" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="likert scale value item 04"/>
+        <FIELD NAME="lsitem05" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="likert scale value item 05"/>
+        <FIELD NAME="lsitem06" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="likert scale value item 06"/>
+        <FIELD NAME="lsitem07" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="likert scale value item 07"/>
+        <FIELD NAME="attempt" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" COMMENT="attempt by user"/>
+        <FIELD NAME="fk_user" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="references the moodle user table"/>
+        <FIELD NAME="fk_osa_instance_qtlikertscale" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="references qtlikertscale id"/>
+        <FIELD NAME="fk_cmid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="foreign key references osa id"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="fk_user" TYPE="foreign" FIELDS="fk_user" REFTABLE="user" REFFIELDS="id" COMMENT="fk_user references id in user table"/>
+        <KEY NAME="fk_osa_instance_qtlikertscale" TYPE="foreign" FIELDS="fk_osa_instance_qtlikertscale" REFTABLE="osa_instance_qtlikertscale" REFFIELDS="id" COMMENT="references qtlikertscale"/>
+        <KEY NAME="fk_cmid" TYPE="foreign" FIELDS="fk_cmid" REFTABLE="osa" REFFIELDS="id"/>
+        <KEY NAME="usermodified" TYPE="foreign" FIELDS="usermodified" REFTABLE="user" REFFIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="osa_instance_qtcheckbox_a" COMMENT="answers are saved in this database">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="cbitem01" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="checkbox value item 01"/>
+        <FIELD NAME="cbitem02" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="checkbox value item 02"/>
+        <FIELD NAME="cbitem03" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="checkbox value item 03"/>
+        <FIELD NAME="cbitem04" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="checkbox value item 04"/>
+        <FIELD NAME="cbitem05" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="checkbox value item 05"/>
+        <FIELD NAME="cbitem06" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="checkbox value item 06"/>
+        <FIELD NAME="cbitem07" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="checkbox value item 07"/>
+        <FIELD NAME="cbitem08" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="checkbox value item 08"/>
+        <FIELD NAME="cbitem09" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="checkbox value item 09"/>
+        <FIELD NAME="cbitem10" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="checkbox value item 10"/>
+        <FIELD NAME="attempt" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" COMMENT="attempt by user"/>
+        <FIELD NAME="fk_user" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fk_osa_instance_qtcheckbox" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="references qtcheckbox id"/>
+        <FIELD NAME="fk_cmid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="foreign key references osa id"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="fk_user" TYPE="foreign" FIELDS="fk_user" REFTABLE="user" REFFIELDS="id" COMMENT="fk_user references id in user table"/>
+        <KEY NAME="fk_osa_instance_qtcheckbox" TYPE="foreign" FIELDS="fk_osa_instance_qtcheckbox" REFTABLE="osa_instance_qtcheckbox" REFFIELDS="id" COMMENT="references qtcheckbox"/>
+        <KEY NAME="fk_cmid" TYPE="foreign" FIELDS="fk_cmid" REFTABLE="osa" REFFIELDS="id"/>
+        <KEY NAME="usermodified" TYPE="foreign" FIELDS="usermodified" REFTABLE="user" REFFIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="osa_instance_qtslider_a" COMMENT="answers are saved in this database">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="attempt" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0" SEQUENCE="false" COMMENT="attempt by user"/>
+        <FIELD NAME="fk_user" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="references the moodle user table"/>
+        <FIELD NAME="fk_osa_instance_qtslider" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="references qtslider id"/>
+        <FIELD NAME="fk_cmid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="foreign key references osa id"/>
+        <FIELD NAME="slider" TYPE="number" LENGTH="10" NOTNULL="true" DEFAULT="5" SEQUENCE="false" DECIMALS="2"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="fk_user" TYPE="foreign" FIELDS="fk_user" REFTABLE="user" REFFIELDS="id" COMMENT="fk_user references id in user table"/>
+        <KEY NAME="fk_osa_instance_qtslider" TYPE="foreign" FIELDS="fk_osa_instance_qtslider" REFTABLE="osa_instance_qtslider" REFFIELDS="id" COMMENT="references qtslider"/>
+        <KEY NAME="fk_cmid" TYPE="foreign" FIELDS="fk_cmid" REFTABLE="osa" REFFIELDS="id"/>
+        <KEY NAME="usermodified" TYPE="foreign" FIELDS="usermodified" REFTABLE="user" REFFIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="osa_cat_std_vals" COMMENT="Default comment for the table, please edit me">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="category01" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="category01 value"/>
+        <FIELD NAME="category02" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="category02 value"/>
+        <FIELD NAME="category03" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="category03 value"/>
+        <FIELD NAME="category04" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="category04 value"/>
+        <FIELD NAME="category05" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="category05 value"/>
+        <FIELD NAME="category06" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="category06 value"/>
+        <FIELD NAME="category07" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="category07 value"/>
+        <FIELD NAME="category08" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="category08 value"/>
+        <FIELD NAME="category09" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="category09 value"/>
+        <FIELD NAME="category10" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="category10 value"/>
+        <FIELD NAME="category11" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="category11 value"/>
+        <FIELD NAME="category12" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="category12 value"/>
+        <FIELD NAME="category13" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="category13 value"/>
+        <FIELD NAME="category14" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="category14 value"/>
+        <FIELD NAME="category15" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="category15 value"/>
+        <FIELD NAME="category16" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="category16 value"/>
+        <FIELD NAME="category17" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="category17 value"/>
+        <FIELD NAME="category18" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="category18 value"/>
+        <FIELD NAME="category19" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="category19 value"/>
+        <FIELD NAME="category20" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="category20 value"/>
+        <FIELD NAME="fk_cmid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="foreign key references osa id"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="fk_cmid" TYPE="foreign" FIELDS="fk_cmid" REFTABLE="osa" REFFIELDS="id"/>
+        <KEY NAME="usermodified" TYPE="foreign" FIELDS="usermodified" REFTABLE="user" REFFIELDS="id"/>
+      </KEYS>
+    </TABLE>
+    <TABLE NAME="osa_cat_feedback_settings" COMMENT="category feedback settings">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="fk_cmid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="fk_cmid"/>
+        <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="stdvalllcat01" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value lower level cat01"/>
+        <FIELD NAME="stdvalulcat01" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value upper level cat01"/>
+        <FIELD NAME="fbtllcat01" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text lower level cat 01"/>
+        <FIELD NAME="fbtllcat01format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtblulcat01" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text level between lower and upper level cat 01"/>
+        <FIELD NAME="fbtblulcat01format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtulcat01" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text upper level cat 01"/>
+        <FIELD NAME="fbtulcat01format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="stdvalllcat02" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value lower level cat02"/>
+        <FIELD NAME="stdvalulcat02" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value upper level cat02"/>
+        <FIELD NAME="fbtllcat02" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text lower level cat 02"/>
+        <FIELD NAME="fbtllcat02format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtblulcat02" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text level between lower and upper level cat 02"/>
+        <FIELD NAME="fbtblulcat02format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtulcat02" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text upper level cat 02"/>
+        <FIELD NAME="fbtulcat02format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="stdvalllcat03" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value lower level cat03"/>
+        <FIELD NAME="stdvalulcat03" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value upper level cat03"/>
+        <FIELD NAME="fbtllcat03" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text lower level cat 03"/>
+        <FIELD NAME="fbtllcat03format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtblulcat03" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text level between lower and upper level cat 03"/>
+        <FIELD NAME="fbtblulcat03format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtulcat03" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text upper level cat 03"/>
+        <FIELD NAME="fbtulcat03format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="stdvalllcat04" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value lower level cat04"/>
+        <FIELD NAME="stdvalulcat04" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value upper level cat04"/>
+        <FIELD NAME="fbtllcat04" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text lower level cat 04"/>
+        <FIELD NAME="fbtllcat04format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtulcat04" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text upper level cat 04"/>
+        <FIELD NAME="fbtulcat04format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtblulcat04format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtblulcat04" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text level between lower and upper level cat 04"/>
+        <FIELD NAME="stdvalllcat05" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value lower level cat05"/>
+        <FIELD NAME="stdvalulcat05" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value upper level cat05"/>
+        <FIELD NAME="fbtllcat05" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text lower level cat 05"/>
+        <FIELD NAME="fbtllcat05format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtblulcat05" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text level between lower and upper level cat 05"/>
+        <FIELD NAME="fbtblulcat05format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtulcat05" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text upper level cat 05"/>
+        <FIELD NAME="fbtulcat05format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="stdvalllcat06" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value lower level cat06"/>
+        <FIELD NAME="stdvalulcat06" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value upper level cat06"/>
+        <FIELD NAME="fbtllcat06" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text lower level cat 06"/>
+        <FIELD NAME="fbtllcat06format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtblulcat06" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text level between lower and upper level cat 06"/>
+        <FIELD NAME="fbtblulcat06format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtulcat06" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text upper level cat 06"/>
+        <FIELD NAME="fbtulcat06format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="stdvalllcat07" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value lower level cat07"/>
+        <FIELD NAME="stdvalulcat07" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value upper level cat07"/>
+        <FIELD NAME="fbtllcat07" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text lower level cat 07"/>
+        <FIELD NAME="fbtllcat07format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtblulcat07" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text level between lower and upper level cat 07"/>
+        <FIELD NAME="fbtblulcat07format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtulcat07" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text upper level cat 07"/>
+        <FIELD NAME="fbtulcat07format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="stdvalllcat08" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value lower level cat08"/>
+        <FIELD NAME="stdvalulcat08" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value upper level cat08"/>
+        <FIELD NAME="fbtllcat08" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text lower level cat 08"/>
+        <FIELD NAME="fbtllcat08format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtblulcat08" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text level between lower and upper level cat 08"/>
+        <FIELD NAME="fbtblulcat08format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtulcat08" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text upper level cat 08"/>
+        <FIELD NAME="fbtulcat08format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="stdvalllcat09" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value lower level cat09"/>
+        <FIELD NAME="stdvalulcat09" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value upper level cat09"/>
+        <FIELD NAME="fbtllcat09" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text lower level cat 09"/>
+        <FIELD NAME="fbtllcat09format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtblulcat09" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text level between lower and upper level cat 09"/>
+        <FIELD NAME="fbtblulcat09format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtulcat09" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text upper level cat 09"/>
+        <FIELD NAME="fbtulcat09format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="stdvalllcat10" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value lower level cat10"/>
+        <FIELD NAME="stdvalulcat10" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value upper level cat10"/>
+        <FIELD NAME="fbtllcat10" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text lower level cat 10"/>
+        <FIELD NAME="fbtllcat10format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtblulcat10" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text level between lower and upper level cat 10"/>
+        <FIELD NAME="fbtblulcat10format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtulcat10" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text upper level cat 10"/>
+        <FIELD NAME="fbtulcat10format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="stdvalllcat11" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value lower level cat11"/>
+        <FIELD NAME="stdvalulcat11" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value upper level cat11"/>
+        <FIELD NAME="fbtllcat11" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text lower level cat 11"/>
+        <FIELD NAME="fbtllcat11format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtblulcat11" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text level between lower and upper level cat 11"/>
+        <FIELD NAME="fbtblulcat11format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtulcat11" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text upper level cat 11"/>
+        <FIELD NAME="fbtulcat11format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="stdvalllcat12" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value lower level cat12"/>
+        <FIELD NAME="stdvalulcat12" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value upper level cat12"/>
+        <FIELD NAME="fbtllcat12" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text lower level cat 12"/>
+        <FIELD NAME="fbtllcat12format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtblulcat12" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text level between lower and upper level cat 12"/>
+        <FIELD NAME="fbtblulcat12format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtulcat12" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text upper level cat 12"/>
+        <FIELD NAME="fbtulcat12format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="stdvalllcat13" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value lower level cat13"/>
+        <FIELD NAME="stdvalulcat13" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value upper level cat13"/>
+        <FIELD NAME="fbtllcat13" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text lower level cat 13"/>
+        <FIELD NAME="fbtllcat13format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtblulcat13" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text level between lower and upper level cat 13"/>
+        <FIELD NAME="fbtblulcat13format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtulcat13" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text upper level cat 13"/>
+        <FIELD NAME="fbtulcat13format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="stdvalllcat14" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value lower level cat14"/>
+        <FIELD NAME="stdvalulcat14" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value upper level cat14"/>
+        <FIELD NAME="fbtllcat14" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text lower level cat 14"/>
+        <FIELD NAME="fbtllcat14format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtblulcat14" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text level between lower and upper level cat 14"/>
+        <FIELD NAME="fbtblulcat14format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtulcat14" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+        <FIELD NAME="fbtulcat14format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="stdvalllcat15" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value lower level cat15"/>
+        <FIELD NAME="stdvalulcat15" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value upper level cat15"/>
+        <FIELD NAME="fbtllcat15" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text lower level cat 15"/>
+        <FIELD NAME="fbtllcat15format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtblulcat15" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text level between lower and upper level cat 15"/>
+        <FIELD NAME="fbtblulcat15format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtulcat15" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text upper level cat 15"/>
+        <FIELD NAME="fbtulcat15format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="stdvalllcat16" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value lower level cat16"/>
+        <FIELD NAME="stdvalulcat16" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value upper level cat16"/>
+        <FIELD NAME="fbtllcat16" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text lower level cat 16"/>
+        <FIELD NAME="fbtllcat16format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtblulcat16" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text level between lower and upper level cat 16"/>
+        <FIELD NAME="fbtblulcat16format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtulcat16" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text upper level cat 16"/>
+        <FIELD NAME="fbtulcat16format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="stdvalllcat17" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value lower level cat17"/>
+        <FIELD NAME="stdvalulcat17" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value upper level cat17"/>
+        <FIELD NAME="fbtllcat17" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text lower level cat 17"/>
+        <FIELD NAME="fbtllcat17format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtblulcat17" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text level between lower and upper level cat 17"/>
+        <FIELD NAME="fbtblulcat17format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtulcat17" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text upper level cat 17"/>
+        <FIELD NAME="fbtulcat17format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="stdvalllcat18" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value lower level cat18"/>
+        <FIELD NAME="stdvalulcat18" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value upper level cat18"/>
+        <FIELD NAME="fbtllcat18" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text lower level cat 18"/>
+        <FIELD NAME="fbtllcat18format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtblulcat18" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text level between lower and upper level cat 18"/>
+        <FIELD NAME="fbtblulcat18format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtulcat18" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text upper level cat 18"/>
+        <FIELD NAME="fbtulcat18format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="stdvalllcat19" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value lower level cat19"/>
+        <FIELD NAME="stdvalulcat19" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value upper level cat19"/>
+        <FIELD NAME="fbtllcat19" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text lower level cat 19"/>
+        <FIELD NAME="fbtllcat19format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtblulcat19" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text level between lower and upper level cat 19"/>
+        <FIELD NAME="fbtblulcat19format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtulcat19" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text upper level cat 19"/>
+        <FIELD NAME="fbtulcat19format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="stdvalllcat20" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value lower level cat20"/>
+        <FIELD NAME="stdvalulcat20" TYPE="number" LENGTH="10" NOTNULL="false" SEQUENCE="false" DECIMALS="3" COMMENT="standard value upper level cat20"/>
+        <FIELD NAME="fbtllcat20" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text lower level cat 20"/>
+        <FIELD NAME="fbtllcat20format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtblulcat20" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text level between lower and upper level cat 20"/>
+        <FIELD NAME="fbtblulcat20format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="fbtulcat20" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="feedback text upper level cat 20"/>
+        <FIELD NAME="fbtulcat20format" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="fk_cmid" TYPE="foreign" FIELDS="fk_cmid" REFTABLE="osa" REFFIELDS="id"/>
+        <KEY NAME="usermodified" TYPE="foreign" FIELDS="usermodified" REFTABLE="user" REFFIELDS="id"/>
+      </KEYS>
+    </TABLE>
+  </TABLES>
+</XMLDB>

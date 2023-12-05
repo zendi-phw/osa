@@ -1,0 +1,928 @@
+{{!
+    This file is part of Moodle - https://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template mod_osa/viewtest
+
+    Template purpose and description.
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * none
+
+    Context variables required for this template:
+    * none
+
+    Example context (json):
+    {
+    }
+}}
+
+{{!
+    ToDo: Update and integrate lang file
+}}
+
+
+{{!
+Include js library for plotly.
+}}
+
+<script src="{{urlplotly}}" charset="utf-8"></script>
+
+{{!
+Include js library for d3
+}}
+
+<script src="{{urld3}}" charset="utf-8"></script>
+
+{{# namecat01}}
+
+    <div class="card mt-2 mb-2">
+        <div class="card-header">
+            {{namecat01}}
+        </div>
+        <div class="card-body">
+
+            {{# namecat01desc}}
+                {{{namecat01desc}}}
+            {{/ namecat01desc}}
+
+            <div id='{{namecat01id}}'></div>
+                <script type="module">
+                    import * as d3 from "{{urld3}}";
+
+                    var q1 = {{q1cat01}};
+                    var median = {{mediancat01}};
+                    var q3 = {{q3cat01}};
+                    var interQuantileRange = {{iqrcat01}};
+                    var min = {{mincat01}};
+                    var max = {{maxcat01}};
+                    var namecatid = "{{namecat01id}}";
+                    var definedcatval = "{{definedcatval01}}";
+                    var visibility = "{{definedcatval01visibility}}";
+                    var indvalcol = "{{feedback01color}}";
+
+                    {{> osa/boxplot}}
+
+                </script>
+
+            {{# feedback01}}
+                {{{feedback01}}}
+            {{/ feedback01}}
+
+        </div>
+    </div>
+
+{{/ namecat01}}
+
+{{!
+    namecat02
+}}
+
+{{# namecat02}}
+
+    <div class="card mt-2 mb-2">
+        <div class="card-header">
+            {{namecat02}}
+        </div>
+        <div class="card-body">
+
+            {{# namecat02desc}}
+                {{{namecat02desc}}}
+            {{/ namecat02desc}}
+
+            <div id='{{namecat02id}}'></div>
+                <script type="module">
+                    import * as d3 from "{{urld3}}";
+
+                    var q1 = {{q1cat02}};
+                    var median = {{mediancat02}};
+                    var q3 = {{q3cat02}};
+                    var interQuantileRange = {{iqrcat02}};
+                    var min = {{mincat02}};
+                    var max = {{maxcat02}};
+                    var namecatid = "{{namecat02id}}";
+                    var definedcatval = "{{definedcatval02}}";
+                    var visibility = "{{definedcatval02visibility}}";
+                    var indvalcol = "{{feedback02color}}";
+
+                    {{> osa/boxplot}}
+
+                </script>
+
+            {{# feedback02}}
+                {{{feedback02}}}
+            {{/ feedback02}}
+
+
+        </div>
+    </div>
+
+{{/ namecat02}}
+
+{{!
+    namecat03
+}}
+
+{{# namecat03}}
+
+    <div class="card mt-2 mb-2">
+        <div class="card-header">
+            {{namecat03}}
+        </div>
+        <div class="card-body">
+
+            {{# namecat03desc}}
+                {{{namecat03desc}}}
+            {{/ namecat03desc}}
+
+            <div id='{{namecat03id}}'></div>
+                <script type="module">
+                    import * as d3 from "{{urld3}}";
+
+                    var q1 = {{q1cat03}};
+                    var median = {{mediancat03}};
+                    var q3 = {{q3cat03}};
+                    var interQuantileRange = {{iqrcat03}};
+                    var min = {{mincat03}};
+                    var max = {{maxcat03}};
+                    var namecatid = "{{namecat03id}}";
+                    var definedcatval = "{{definedcatval03}}";
+                    var visibility = "{{definedcatval03visibility}}";
+                    var indvalcol = "{{feedback03color}}";
+
+                    {{> osa/boxplot}}
+
+                </script>
+
+            {{# feedback03}}
+                {{{feedback03}}}
+            {{/ feedback03}}
+
+        </div>
+    </div>
+
+{{/ namecat03}}
+
+{{!
+    namecat04
+}}
+
+{{# namecat04}}
+
+    <div class="card mt-2 mb-2">
+        <div class="card-header">
+            {{namecat04}}
+        </div>
+        <div class="card-body">
+
+            {{# namecat04desc}}
+                {{{namecat04desc}}}
+            {{/ namecat04desc}}
+
+            <div id='{{namecat04id}}'></div>
+                <script type="module">
+                    import * as d3 from "{{urld3}}";
+
+                    var q1 = {{q1cat04}};
+                    var median = {{mediancat04}};
+                    var q3 = {{q3cat04}};
+                    var interQuantileRange = {{iqrcat04}};
+                    var min = {{mincat04}};
+                    var max = {{maxcat04}};
+                    var namecatid = "{{namecat04id}}";
+                    var definedcatval = "{{definedcatval04}}";
+                    var visibility = "{{definedcatval04visibility}}";
+                    var indvalcol = "{{feedback04color}}";
+
+                    {{> osa/boxplot}}
+
+                </script>
+
+            {{# feedback04}}
+                {{{feedback04}}}
+            {{/ feedback04}}
+
+        </div>
+    </div>
+
+{{/ namecat04}}
+
+{{!
+    namecat05
+}}
+
+{{# namecat05}}
+
+    <div class="card mt-2 mb-2">
+        <div class="card-header">
+            {{namecat05}}
+        </div>
+        <div class="card-body">
+
+            {{# namecat05desc}}
+                {{{namecat05desc}}}
+            {{/ namecat05desc}}
+
+            <div id='{{namecat05id}}'></div>
+                <script type="module">
+                    import * as d3 from "{{urld3}}";
+
+                    var q1 = {{q1cat05}};
+                    var median = {{mediancat05}};
+                    var q3 = {{q3cat05}};
+                    var interQuantileRange = {{iqrcat05}};
+                    var min = {{mincat05}};
+                    var max = {{maxcat05}};
+                    var namecatid = "{{namecat05id}}";
+                    var definedcatval = "{{definedcatval05}}";
+                    var visibility = "{{definedcatval05visibility}}";
+                    var indvalcol = "{{feedback05color}}";
+
+                    {{> osa/boxplot}}
+
+                </script>
+
+            {{# feedback05}}
+                {{{feedback05}}}
+            {{/ feedback05}}
+
+        </div>
+    </div>
+
+{{/ namecat05}}
+
+{{!
+    namecat06
+}}
+
+{{# namecat06}}
+
+    <div class="card mt-2 mb-2">
+        <div class="card-header">
+            {{namecat06}}
+        </div>
+        <div class="card-body">
+
+            {{# namecat06desc}}
+                {{{namecat06desc}}}
+            {{/ namecat06desc}}
+
+            <div id='{{namecat06id}}'></div>
+                <script type="module">
+                    import * as d3 from "{{urld3}}";
+
+                    var q1 = {{q1cat06}};
+                    var median = {{mediancat06}};
+                    var q3 = {{q3cat06}};
+                    var interQuantileRange = {{iqrcat06}};
+                    var min = {{mincat06}};
+                    var max = {{maxcat06}};
+                    var namecatid = "{{namecat06id}}";
+                    var definedcatval = "{{definedcatval06}}";
+                    var visibility = "{{definedcatval06visibility}}";
+                    var indvalcol = "{{feedback06color}}";
+
+                    {{> osa/boxplot}}
+
+                </script>
+
+            {{# feedback06}}
+                {{{feedback06}}}
+            {{/ feedback06}}
+
+        </div>
+    </div>
+
+{{/ namecat06}}
+
+{{!
+    namecat07
+}}
+
+{{# namecat07}}
+
+    <div class="card mt-2 mb-2">
+        <div class="card-header">
+            {{namecat07}}
+        </div>
+        <div class="card-body">
+
+            {{# namecat07desc}}
+                {{{namecat07desc}}}
+            {{/ namecat07desc}}
+
+            <div id='{{namecat07id}}'></div>
+                <script type="module">
+                    import * as d3 from "{{urld3}}";
+
+                    var q1 = {{q1cat07}};
+                    var median = {{mediancat07}};
+                    var q3 = {{q3cat07}};
+                    var interQuantileRange = {{iqrcat07}};
+                    var min = {{mincat07}};
+                    var max = {{maxcat07}};
+                    var namecatid = "{{namecat07id}}";
+                    var definedcatval = "{{definedcatval07}}";
+                    var visibility = "{{definedcatval07visibility}}";
+                    var indvalcol = "{{feedback07color}}";
+
+                    {{> osa/boxplot}}
+
+                </script>
+
+            {{# feedback07}}
+                {{{feedback07}}}
+            {{/ feedback07}}
+
+        </div>
+    </div>
+
+{{/ namecat07}}
+
+{{!
+    namecat08
+}}
+
+{{# namecat08}}
+
+    <div class="card mt-2 mb-2">
+        <div class="card-header">
+            {{namecat08}}
+        </div>
+        <div class="card-body">
+
+            {{# namecat08desc}}
+                {{{namecat08desc}}}
+            {{/ namecat08desc}}
+
+            <div id='{{namecat08id}}'></div>
+                <script type="module">
+                    import * as d3 from "{{urld3}}";
+
+                    var q1 = {{q1cat08}};
+                    var median = {{mediancat08}};
+                    var q3 = {{q3cat08}};
+                    var interQuantileRange = {{iqrcat08}};
+                    var min = {{mincat08}};
+                    var max = {{maxcat08}};
+                    var namecatid = "{{namecat08id}}";
+                    var definedcatval = "{{definedcatval08}}";
+                    var visibility = "{{definedcatval08visibility}}";
+                    var indvalcol = "{{feedback08color}}";
+
+                    {{> osa/boxplot}}
+
+                </script>
+
+            {{# feedback08}}
+                {{{feedback08}}}
+            {{/ feedback08}}
+
+        </div>
+    </div>
+
+{{/ namecat08}}
+
+{{!
+    namecat09
+}}
+
+{{# namecat09}}
+
+    <div class="card mt-2 mb-2">
+        <div class="card-header">
+            {{namecat09}}
+        </div>
+        <div class="card-body">
+
+            {{# namecat09desc}}
+                {{{namecat09desc}}}
+            {{/ namecat09desc}}
+
+            <div id='{{namecat09id}}'></div>
+                <script type="module">
+                    import * as d3 from "{{urld3}}";
+
+                    var q1 = {{q1cat09}};
+                    var median = {{mediancat09}};
+                    var q3 = {{q3cat09}};
+                    var interQuantileRange = {{iqrcat09}};
+                    var min = {{mincat09}};
+                    var max = {{maxcat09}};
+                    var namecatid = "{{namecat09id}}";
+                    var definedcatval = "{{definedcatval09}}";
+                    var visibility = "{{definedcatval09visibility}}";
+                    var indvalcol = "{{feedback09color}}";
+
+                    {{> osa/boxplot}}
+
+                </script>
+
+            {{# feedback09}}
+                {{{feedback09}}}
+            {{/ feedback09}}
+
+        </div>
+    </div>
+
+{{/ namecat09}}
+
+{{!
+    namecat10
+}}
+
+{{# namecat10}}
+
+    <div class="card mt-2 mb-2">
+        <div class="card-header">
+            {{namecat10}}
+        </div>
+        <div class="card-body">
+
+            {{# namecat10desc}}
+                {{{namecat10desc}}}
+            {{/ namecat10desc}}
+
+            <div id='{{namecat10id}}'></div>
+                <script type="module">
+                    import * as d3 from "{{urld3}}";
+
+                    var q1 = {{q1cat10}};
+                    var median = {{mediancat10}};
+                    var q3 = {{q3cat10}};
+                    var interQuantileRange = {{iqrcat10}};
+                    var min = {{mincat10}};
+                    var max = {{maxcat10}};
+                    var namecatid = "{{namecat10id}}";
+                    var definedcatval = "{{definedcatval10}}";
+                    var visibility = "{{definedcatval10visibility}}";
+                    var indvalcol = "{{feedback10color}}";
+
+                    {{> osa/boxplot}}
+
+                </script>
+
+            {{# feedback10}}
+                {{{feedback10}}}
+            {{/ feedback10}}
+
+        </div>
+    </div>
+
+{{/ namecat10}}
+
+{{!
+    namecat11
+}}
+
+{{# namecat11}}
+
+    <div class="card mt-2 mb-2">
+        <div class="card-header">
+            {{namecat11}}
+        </div>
+        <div class="card-body">
+
+            {{# namecat11desc}}
+                {{{namecat11desc}}}
+            {{/ namecat11desc}}
+
+            <div id='{{namecat11id}}'></div>
+                <script type="module">
+                    import * as d3 from "{{urld3}}";
+
+                    var q1 = {{q1cat11}};
+                    var median = {{mediancat11}};
+                    var q3 = {{q3cat11}};
+                    var interQuantileRange = {{iqrcat11}};
+                    var min = {{mincat11}};
+                    var max = {{maxcat11}};
+                    var namecatid = "{{namecat11id}}";
+                    var definedcatval = "{{definedcatval11}}";
+                    var visibility = "{{definedcatval11visibility}}";
+                    var indvalcol = "{{feedback11color}}";
+
+                    {{> osa/boxplot}}
+
+                </script>
+
+            {{# feedback11}}
+                {{{feedback11}}}
+            {{/ feedback11}}
+
+        </div>
+    </div>
+
+{{/ namecat11}}
+
+{{!
+    namecat12
+}}
+
+{{# namecat12}}
+
+    <div class="card mt-2 mb-2">
+        <div class="card-header">
+            {{namecat12}}
+        </div>
+        <div class="card-body">
+
+            {{# namecat12desc}}
+                {{{namecat12desc}}}
+            {{/ namecat12desc}}
+
+            <div id='{{namecat12id}}'></div>
+                <script type="module">
+                    import * as d3 from "{{urld3}}";
+
+                    var q1 = {{q1cat12}};
+                    var median = {{mediancat12}};
+                    var q3 = {{q3cat12}};
+                    var interQuantileRange = {{iqrcat12}};
+                    var min = {{mincat12}};
+                    var max = {{maxcat12}};
+                    var namecatid = "{{namecat12id}}";
+                    var definedcatval = "{{definedcatval12}}";
+                    var visibility = "{{definedcatval12visibility}}";
+                    var indvalcol = "{{feedback12color}}";
+
+                    {{> osa/boxplot}}
+
+                </script>
+
+            {{# feedback12}}
+                {{{feedback12}}}
+            {{/ feedback12}}
+
+        </div>
+    </div>
+
+{{/ namecat12}}
+
+{{!
+    namecat13
+}}
+
+{{# namecat13}}
+
+    <div class="card mt-2 mb-2">
+        <div class="card-header">
+            {{namecat13}}
+        </div>
+        <div class="card-body">
+
+            {{# namecat13desc}}
+                {{{namecat13desc}}}
+            {{/ namecat13desc}}
+
+            <div id='{{namecat13id}}'></div>
+                <script type="module">
+                    import * as d3 from "{{urld3}}";
+
+                    var q1 = {{q1cat13}};
+                    var median = {{mediancat13}};
+                    var q3 = {{q3cat13}};
+                    var interQuantileRange = {{iqrcat13}};
+                    var min = {{mincat13}};
+                    var max = {{maxcat13}};
+                    var namecatid = "{{namecat13id}}";
+                    var definedcatval = "{{definedcatval13}}";
+                    var visibility = "{{definedcatval13visibility}}";
+                    var indvalcol = "{{feedback13color}}";
+
+                    {{> osa/boxplot}}
+
+                </script>
+
+            {{# feedback13}}
+                {{{feedback13}}}
+            {{/ feedback13}}
+
+        </div>
+    </div>
+
+{{/ namecat13}}
+
+{{!
+    namecat14
+}}
+
+{{# namecat14}}
+
+    <div class="card mt-2 mb-2">
+        <div class="card-header">
+            {{namecat14}}
+        </div>
+        <div class="card-body">
+
+            {{# namecat14desc}}
+                {{{namecat14desc}}}
+            {{/ namecat14desc}}
+
+            <div id='{{namecat14id}}'></div>
+                <script type="module">
+                    import * as d3 from "{{urld3}}";
+
+                    var q1 = {{q1cat14}};
+                    var median = {{mediancat14}};
+                    var q3 = {{q3cat14}};
+                    var interQuantileRange = {{iqrcat14}};
+                    var min = {{mincat14}};
+                    var max = {{maxcat14}};
+                    var namecatid = "{{namecat14id}}";
+                    var definedcatval = "{{definedcatval14}}";
+                    var visibility = "{{definedcatval14visibility}}";
+                    var indvalcol = "{{feedback14color}}";
+
+                    {{> osa/boxplot}}
+
+                </script>
+
+            {{# feedback14}}
+                {{{feedback14}}}
+            {{/ feedback14}}
+
+        </div>
+    </div>
+
+{{/ namecat14}}
+
+{{!
+    namecat15
+}}
+
+{{# namecat15}}
+
+    <div class="card mt-2 mb-2">
+        <div class="card-header">
+            {{namecat15}}
+        </div>
+        <div class="card-body">
+
+            {{# namecat15desc}}
+                {{{namecat15desc}}}
+            {{/ namecat15desc}}
+
+            <div id='{{namecat15id}}'></div>
+                <script type="module">
+                    import * as d3 from "{{urld3}}";
+
+                    var q1 = {{q1cat15}};
+                    var median = {{mediancat15}};
+                    var q3 = {{q3cat15}};
+                    var interQuantileRange = {{iqrcat15}};
+                    var min = {{mincat15}};
+                    var max = {{maxcat15}};
+                    var namecatid = "{{namecat15id}}";
+                    var definedcatval = "{{definedcatval15}}";
+                    var visibility = "{{definedcatval15visibility}}";
+                    var indvalcol = "{{feedback15color}}";
+
+                    {{> osa/boxplot}}
+
+                </script>
+
+            {{# feedback15}}
+                {{{feedback15}}}
+            {{/ feedback15}}
+
+        </div>
+    </div>
+
+{{/ namecat15}}
+
+{{!
+    namecat16
+}}
+
+{{# namecat16}}
+
+    <div class="card mt-2 mb-2">
+        <div class="card-header">
+            {{namecat16}}
+        </div>
+        <div class="card-body">
+
+            {{# namecat16desc}}
+                {{{namecat16desc}}}
+            {{/ namecat16desc}}
+
+            <div id='{{namecat16id}}'></div>
+                <script type="module">
+                    import * as d3 from "{{urld3}}";
+
+                    var q1 = {{q1cat16}};
+                    var median = {{mediancat16}};
+                    var q3 = {{q3cat16}};
+                    var interQuantileRange = {{iqrcat16}};
+                    var min = {{mincat16}};
+                    var max = {{maxcat16}};
+                    var namecatid = "{{namecat16id}}";
+                    var definedcatval = "{{definedcatval16}}";
+                    var visibility = "{{definedcatval16visibility}}";
+                    var indvalcol = "{{feedback16color}}";
+
+                    {{> osa/boxplot}}
+
+                </script>
+
+            {{# feedback16}}
+                {{{feedback16}}}
+            {{/ feedback16}}
+
+        </div>
+    </div>
+
+{{/ namecat16}}
+
+{{!
+    namecat17
+}}
+
+{{# namecat17}}
+
+    <div class="card mt-2 mb-2">
+        <div class="card-header">
+            {{namecat17}}
+        </div>
+        <div class="card-body">
+
+            {{# namecat17desc}}
+                {{{namecat17desc}}}
+            {{/ namecat17desc}}
+
+            <div id='{{namecat17id}}'></div>
+                <script type="module">
+                    import * as d3 from "{{urld3}}";
+
+                    var q1 = {{q1cat17}};
+                    var median = {{mediancat17}};
+                    var q3 = {{q3cat17}};
+                    var interQuantileRange = {{iqrcat17}};
+                    var min = {{mincat17}};
+                    var max = {{maxcat17}};
+                    var namecatid = "{{namecat17id}}";
+                    var definedcatval = "{{definedcatval17}}";
+                    var visibility = "{{definedcatval17visibility}}";
+                    var indvalcol = "{{feedback17color}}";
+
+                    {{> osa/boxplot}}
+
+                </script>
+
+            {{# feedback17}}
+                {{{feedback17}}}
+            {{/ feedback17}}
+
+        </div>
+    </div>
+
+{{/ namecat17}}
+
+{{!
+    namecat18
+}}
+
+{{# namecat18}}
+
+    <div class="card mt-2 mb-2">
+        <div class="card-header">
+            {{namecat18}}
+        </div>
+        <div class="card-body">
+
+            {{# namecat18desc}}
+                {{{namecat18desc}}}
+            {{/ namecat18desc}}
+
+            <div id='{{namecat18id}}'></div>
+                <script type="module">
+                    import * as d3 from "{{urld3}}";
+
+                    var q1 = {{q1cat18}};
+                    var median = {{mediancat18}};
+                    var q3 = {{q3cat18}};
+                    var interQuantileRange = {{iqrcat18}};
+                    var min = {{mincat18}};
+                    var max = {{maxcat18}};
+                    var namecatid = "{{namecat18id}}";
+                    var definedcatval = "{{definedcatval18}}";
+                    var visibility = "{{definedcatval18visibility}}";
+                    var indvalcol = "{{feedback18color}}";
+
+                    {{> osa/boxplot}}
+
+                </script>
+
+            {{# feedback18}}
+                {{{feedback18}}}
+            {{/ feedback18}}
+
+        </div>
+    </div>
+
+{{/ namecat18}}
+
+{{!
+    namecat19
+}}
+
+{{# namecat19}}
+
+    <div class="card mt-2 mb-2">
+        <div class="card-header">
+            {{namecat19}}
+        </div>
+        <div class="card-body">
+
+            {{# namecat19desc}}
+                {{{namecat19desc}}}
+            {{/ namecat19desc}}
+
+            <div id='{{namecat19id}}'></div>
+                <script type="module">
+                    import * as d3 from "{{urld3}}";
+
+                    var q1 = {{q1cat19}};
+                    var median = {{mediancat19}};
+                    var q3 = {{q3cat19}};
+                    var interQuantileRange = {{iqrcat19}};
+                    var min = {{mincat19}};
+                    var max = {{maxcat19}};
+                    var namecatid = "{{namecat19id}}";
+                    var definedcatval = "{{definedcatval19}}";
+                    var visibility = "{{definedcatval19visibility}}";
+                    var indvalcol = "{{feedback19color}}";
+
+                    {{> osa/boxplot}}
+
+                </script>
+
+            {{# feedback19}}
+                {{{feedback19}}}
+            {{/ feedback19}}
+
+        </div>
+    </div>
+
+{{/ namecat19}}
+
+{{!
+    namecat20
+}}
+
+{{# namecat20}}
+
+    <div class="card mt-2 mb-2">
+        <div class="card-header">
+            {{namecat20}}
+        </div>
+        <div class="card-body">
+
+            {{# namecat20desc}}
+                {{{namecat20desc}}}
+            {{/ namecat20desc}}
+
+            <div id='{{namecat20id}}'></div>
+                <script type="module">
+                    import * as d3 from "{{urld3}}";
+
+                    var q1 = {{q1cat20}};
+                    var median = {{mediancat20}};
+                    var q3 = {{q3cat20}};
+                    var interQuantileRange = {{iqrcat20}};
+                    var min = {{mincat20}};
+                    var max = {{maxcat20}};
+                    var namecatid = "{{namecat20id}}";
+                    var definedcatval = "{{definedcatval20}}";
+                    var visibility = "{{definedcatval20visibility}}";
+                    var indvalcol = "{{feedback20color}}";
+
+                    {{> osa/boxplot}}
+
+                </script>
+
+            {{# feedback20}}
+                {{{feedback20}}}
+            {{/ feedback20}}
+
+        </div>
+    </div>
+
+{{/ namecat20}}
