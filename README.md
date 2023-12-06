@@ -4,6 +4,8 @@ TODO Describe the plugin shortly here.
 
 TODO Provide more detailed description here.
 
+The OSA Plugin project documentation is available in the [zendi-phw/osa-doc](https://github.com/zendi-phw/osa-doc) repository.
+
 ## Installing via uploaded ZIP file ##
 
 1. Log in to your Moodle site as an admin and go to _Site administration >
