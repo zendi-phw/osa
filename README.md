@@ -42,3 +42,7 @@ PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License along with
 this program.  If not, see <https://www.gnu.org/licenses/>.
+
+MIT license is to be used on file boxplot.mustache. This file has been modified from a work from @holtzy and has been modified by @moodleismylms.
+
+
