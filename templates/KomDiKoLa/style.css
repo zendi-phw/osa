@@ -1,0 +1,106 @@
+body {
+  font: 7px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+
+/* hide y axis */
+.axis .tick line,
+.axis path {
+  display: none;
+}
+
+.category-circle {
+  fill: #F4A636;
+}
+
+.category-arc-1 {
+  fill: #019A47;
+}
+
+.category-arc-2 {
+  fill: #0070C0;
+}
+
+.category-arc-3 {
+  fill: #7030A0;
+}
+
+.question-circle {
+  fill: url(#gradient-questions);
+}
+
+.chart-area-circle {
+  stroke: #fff;
+  stroke-width: 3px;
+  fill: url(#gradient-chart-area);
+}
+
+.center-circle {
+  fill: #fff;
+}
+
+.circle-scale {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1px;
+  stroke-dasharray: 5,3;
+}
+
+.circle-scale-100 {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 3px;
+}
+
+.gridlines {
+  fill: none;
+  stroke: #fff;
+}
+
+.minor {
+  stroke-width: 1px
+}
+
+.major {
+  stroke-width: 1px
+}
+
+.category-label-text {
+  font-weight: bold;
+  font-size: 18px;
+  fill: #fff;
+  text-align: center;
+}
+
+.question-label-text {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.question-labels {
+  text-anchor: middle;
+  font-weight: bold;
+}
+
+.category-labels {
+  text-anchor: middle;
+  font-weight: bold;
+  font-size: 16px;
+  fill: #fff;
+}
+
+.tooltip {
+  display: block;
+  position: fixed;
+  overflow: hidden;
+  font-size: 16px;
+  background-color: #eee;
+  padding: 8px;
+}
