@@ -47,4 +47,6 @@ this program.  If not, see <https://www.gnu.org/licenses/>.
 
 MIT license is to be used on file boxplot.mustache. This file has been modified from a work by [@holtzy](https://github.com/holtzy/). It has been modified by [@moodleismylms](https://github.com/moodleismylms).
 
+GPL license is to be used on file script.js. This file is based in parts on a work by [@mbostock](https://gist.github.com/mbostock). Apart from these parts it has been created by [@manuelecker](https://github.com/manuelecker).
+
 
