@@ -1,6 +1,6 @@
 # Online Self Assessment #
 
-Das OSA ist ein Moodle-Plugin zur Umsetzung von Online Self Assessments.
+OSA is a Moodle plugin to be able to conduct Online Self Assessments.
 
 
 The OSA Plugin project documentation is available in the [zendi-phw/osa-doc](https://github.com/zendi-phw/osa-doc) repository.
